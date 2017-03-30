@@ -11,7 +11,6 @@
         <bean id="app" class="com.yet.spring.core.main.App" scope="prototype">
         <constructor-arg ref="event"/>
         <constructor-arg ref="CacheFileEventLogger"/>
-        <constructor-arg ref="mapLogger"/>
         </bean>
         <bean id="event" class="com.yet.spring.core.main.Event" scope="prototype">
         <constructor-arg><bean class="java.util.Date"/></constructor-arg>
