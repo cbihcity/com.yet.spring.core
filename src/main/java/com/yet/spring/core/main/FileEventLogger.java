@@ -3,6 +3,7 @@ package com.yet.spring.core.main;
 import java.io.File;
 import java.io.IOException;
 
+import com.yet.spring.core.main.*;
 import org.apache.commons.io.FileUtils;
 
 import com.yet.spring.core.interfaces.EventLogger;
@@ -10,7 +11,7 @@ import com.yet.spring.core.interfaces.EventLogger;
 public class FileEventLogger implements EventLogger {
 	public String filename;
 	private File file;
-	public void logger(Event event) {
+	public void logger(com.yet.spring.core.main.Event event) {
 		try {
 			FileUtils.writeStringToFile(file, event.toString() + "\n", true);
 		} catch (IOException e) {

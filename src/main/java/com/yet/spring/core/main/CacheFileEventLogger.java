@@ -1,19 +1,22 @@
 package com.yet.spring.core.main;
 
+import com.yet.spring.core.main.*;
+import com.yet.spring.core.main.Event;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class CacheFileEventLogger extends FileEventLogger {
+public class CacheFileEventLogger extends com.yet.spring.core.main.FileEventLogger {
 
 	private int cachesize;
-	private List<Event> list;
+	private List<com.yet.spring.core.main.Event> list;
 	
 	
 	
 	public CacheFileEventLogger(String filename, int cachesize) {
 		super(filename);
 		this.cachesize = cachesize;
-		this.list = new ArrayList<Event>(cachesize);
+		this.list = new ArrayList<com.yet.spring.core.main.Event>(cachesize);
 	}
 
 	public void logger(Event event) {

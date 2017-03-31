@@ -2,10 +2,13 @@ package com.yet.spring.core.main;
 
 import java.util.Map;
 
+import com.yet.spring.core.main.Event;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.yet.spring.core.interfaces.EventLogger;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class App {
 	private Event event;
@@ -47,8 +50,9 @@ public class App {
 	public static void main(String[] args) throws InterruptedException {
 		ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
 		long count = 0;
-		App app = ctx.getBean(App.class);
+
 		while (count < 450000) {
+			App app = ctx.getBean(App.class);
 			app.event.setMsg("ok");
 			app.logEvent(app.getEvent());
 			count++;

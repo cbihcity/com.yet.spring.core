@@ -3,6 +3,7 @@ package com.yet.spring.core.main;
 import java.util.Collection;
 
 import com.yet.spring.core.interfaces.EventLogger;
+import com.yet.spring.core.main.*;
 
 public class CombinedEventLogger implements EventLogger {
 
@@ -16,7 +17,7 @@ public class CombinedEventLogger implements EventLogger {
 	}
 
 	@Override
-	public void logger(Event event) {
+	public void logger(com.yet.spring.core.main.Event event) {
 		for (EventLogger eventLogger : loggers) {
 			eventLogger.logger(event);
 		}
